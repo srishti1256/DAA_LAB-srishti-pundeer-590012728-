@@ -1,5 +1,6 @@
 #include<iostream>
 #include<chrono>
+#include<algorithm>
 using namespace std;
 using namespace std :: chrono ; 
  
@@ -38,6 +39,7 @@ int main()
     int arr4[] = {1, 3, 5, 7, 9};   
     int arr5[] = {1, 3, 5, 7, 9, 11};
     int arr6[] = {-10, -5, 0, 5, 10}; 
+    std :: sort (arr6,arr6+4);
     int arr7[] = {1, 2, 2, 2, 3, 4};
     int arr8[]= { 1,2,3,4,5}; 
     int arr9[]= {20000, 30000,68888,98888}; 
@@ -87,9 +89,10 @@ int main()
 }
 {
     int arr12[] = { 200,-100,560,43,97};
+    std :: sort(arr12,arr12+5);
             auto start = high_resolution_clock::now();
 
-        cout<<" test case 3 taget element index:" << bsalgoritm(arr12,4,560);
+        cout<<" test case 3 taget element index:" << bsalgoritm(arr12,4,97);
             auto stop = high_resolution_clock::now();
     auto duration = duration_cast<nanoseconds>(stop - start);
     cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
@@ -106,15 +109,112 @@ int main()
 }
 {
     int arr14[]= {3873,5738,4829,5739,5729,5638};
+    std :: sort(arr14,arr14+5);
         auto start = high_resolution_clock::now();
 
-    cout<<" test case 5 taget element index:" << bsalgoritm(arr14,5,4829);
+    cout<<" test case 5 taget element index:" << bsalgoritm(arr14,5,5738);
         auto stop = high_resolution_clock::now();
     auto duration = duration_cast<nanoseconds>(stop - start);
     cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
 
 }
+{//worst cses 
+    int arr15[] = { 1,2,3,4,5};
+            auto start = high_resolution_clock::now();
 
+        cout<<" test case 1 taget element index:" << bsalgoritm(arr15,4,6);
+            auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
+}
+{
+    int arr16[]={10,20,30,40,50,60,70};
+            auto start = high_resolution_clock::now();
+
+        cout<<" test case 2 taget element index:" << bsalgoritm(arr16,6,400);
+            auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
+}
+{
+    int arr17[] = { 200,-100,560,43,97};
+    std :: sort(arr17,arr17+4);
+            auto start = high_resolution_clock::now();
+
+        cout<<" test case 3 taget element index:" << bsalgoritm(arr17,4,80);
+            auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
+}
+{
+    int arr18[] = { 4000,4001,4002,4003,4004,4005};
+            auto start = high_resolution_clock::now();
+
+        cout<<" test case 4 taget element index:" << bsalgoritm(arr18,5,902);
+            auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
+}
+{ 
+    int arr19[]= {3873,5738,4829,5739,5729,5638};
+    std :: sort(arr19,arr19+5);
+        auto start = high_resolution_clock::now();
+
+    cout<<" test case 5 taget element index:" << bsalgoritm(arr19,5,5730);
+        auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
+}
+
+// average cases
+{
+    int arr20[] = { 1,2,3,4,5};
+            auto start = high_resolution_clock::now();
+
+        cout<<" test case 1 taget element index:" << bsalgoritm(arr20,4,5);
+            auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
+}
+{
+    int arr21[]={10,20,30,40,50,60,70};
+            auto start = high_resolution_clock::now();
+
+        cout<<" test case 2 taget element index:" << bsalgoritm(arr21,6,50);
+            auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
+}
+
+{
+    int arr22[] = { 200,-100,560,43,97};
+    std :: sort(arr22,arr22+4);
+            auto start = high_resolution_clock::now();
+
+        cout<<" test case 3 taget element index:" << bsalgoritm(arr22,4,97);
+            auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
+}
+{
+    int arr23[] = { 4000,4001,4002,4003,4004,4005};
+            auto start = high_resolution_clock::now();
+
+        cout<<" test case 4 taget element index:" << bsalgoritm(arr23,5,902);
+            auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
+}
+{
+int arr24[]= {3873,5738,4829,5739,5729,5638};
+    std :: sort(arr24,arr24+5);
+        auto start = high_resolution_clock::now();
+
+    cout<<" test case 5 taget element index:" << bsalgoritm(arr24,5,5638);
+        auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+    cout << "Execution time for : " << duration.count() << " nanoseconds" << endl;
+}
     return 0;
 
 }
