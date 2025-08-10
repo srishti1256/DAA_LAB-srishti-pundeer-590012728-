@@ -1,0 +1,49 @@
+#include<iostream>
+#include<chrono>
+using namespace std : : chrono ; 
+using namespace std; 
+
+int bsalgoritm(int arr[],int n , int goal)
+{
+    int low = 0 ; int high = n-1  ;
+
+    while (low<=high)
+    {
+        int middle=(high+low)/2 ; 
+        if(arr[middle]=goal)
+         return mid; 
+
+         else if (arr[middle]<target )
+
+         low = mid+1;
+
+         else (arr[middle]> target)
+          high = mid -1 ; 
+
+     }
+
+   return -1 ; 
+    
+}
+
+int main()
+{
+    int arr[]={2,3,4,5,6,7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int target = 2 ; 
+
+    auto start = high_resolution_clock::now();
+    int result = binarySearch(arr, n, target);
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<nanoseconds>(stop - start);
+
+    if (result != -1)
+        cout << "Element found at index " << result << endl;
+    else
+        cout << "Element not found" << endl;
+
+    cout << "Execution time: " << duration.count() << " nanoseconds" << endl;
+
+    return 0;
+
+}
